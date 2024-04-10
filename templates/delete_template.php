@@ -1,4 +1,6 @@
 <?php
+global $conn;
+
 session_start();
 
 // modulo di autenticazione dell'utente
@@ -31,7 +33,7 @@ if (isset($_GET['id'])) {
         }
     } else {
         // Se l'utente non ha confermato, chiedi conferma
-        echo "<script>
+        echo "<script>   
                 if (confirm('Are you sure you want delete the template?')) {
                     window.location.href = 'delete_template.php?id=$template_id&confirm=true';
                 } else {
