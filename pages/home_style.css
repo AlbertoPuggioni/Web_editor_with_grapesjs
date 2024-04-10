@@ -1,0 +1,165 @@
+/* Regole di stile per la home */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  background-image: url('https://www.pixel4k.com/wp-content/uploads/2020/08/dark-abstract-black-minimal_1596927735.jpg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: rgb(119, 123, 117);
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: none;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.navbar .toggle_btn{
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+#user {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+.user-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding: 20px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+  right: 0;
+  color: black;
+}
+.user{
+  position: relative;
+  float: right;
+}
+.user:hover .user-menu {
+  display: block;
+  z-index: 1;
+}
+.hover-menu a:visited {
+  color: inherit;
+}
+
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  top: 60px;
+  height: 0;
+  width: 175px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu.open {
+  height: 140px;
+}
+
+.dropdown_menu li {
+  padding: 0.5rem;
+  display: flex;
+  align-items: left;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section#home{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+#home h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+
+}
+
+.user-menu a{
+  text-decoration: none;
+}
+
+@media (max-width:992px){
+  .navbar .links,
+  .navbar .action_btn, .user{
+      display: none;
+  }
+
+  .navbar .toggle_btn{
+      display: block;  
+  }
+
+  .dropdown_menu{
+      display: block;
+  }
+}
+
+@media (max-width:576px){
+  .dropdown_menu {
+      left: 2rem;
+      width: unset;
+
+  }
+}
