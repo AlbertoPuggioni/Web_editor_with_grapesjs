@@ -31,50 +31,6 @@ $stmt->bind_param("i", $template_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Verifica se il template esiste
-if ($result->num_rows != 1) {
-    echo '<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template not found</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .container {
-                text-align: center;
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            h1 {
-                color: #333;
-            }
-            p {
-                color: #666;
-                margin-top: 20px;
-            }
-        </style>
-    </head>
-    <body>
-    <div class="container">
-        <h1>Seems like the template you are looking for is vanished!</h1>
-        <p> Please create a new one <a href="web_editor.php">here</a> or choose another one of yours <a href="../templates/collection_templates.php">!</p>
-    </div>
-    </body>
-    </html>';
-    exit;
-}
 
 $template_data = $result->fetch_assoc();
 

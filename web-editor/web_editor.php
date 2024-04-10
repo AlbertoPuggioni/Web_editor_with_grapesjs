@@ -354,6 +354,7 @@ include("../modules/template_manager.php");
         let css = editor.getCss();
         let templateName = $('#template-name').val();
 
+
         // Effettua una richiesta AJAX per salvare o aggiornare il template nel database
         $.ajax({
             url: 'web_editor.php?id=<?php echo $template_id; ?>',
