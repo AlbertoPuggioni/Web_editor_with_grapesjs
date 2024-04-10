@@ -70,7 +70,7 @@ if (isset($_SESSION['success_message'])) {
 
                 <div class="input-group">
                     <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="Deve contenere almeno una lettera maiuscola, una minuscola, un numero e deve essere lunga almeno 8 caratteri"
+                        title="The password must contains at least: an Upper case character, a lower case character, a number and it must be at least 8 characters long "
                         required>
                     <label for="">Password</label>
                 </div>
