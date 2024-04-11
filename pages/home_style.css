@@ -41,7 +41,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .navbar .logo a{
@@ -68,6 +67,7 @@ header {
   height: 50px;
   width: 50px;
 }
+
 .user-menu {
   display: none;
   position: absolute;
@@ -79,14 +79,17 @@ header {
   right: 0;
   color: black;
 }
+
 .user{
   position: relative;
   float: right;
 }
+
 .user:hover .user-menu {
   display: block;
   z-index: 1;
 }
+
 .hover-menu a:visited {
   color: inherit;
 }
@@ -102,7 +105,6 @@ header {
   border-radius: 10px;
   overflow: hidden;
   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
 }
 
 .dropdown_menu.open {
@@ -134,7 +136,6 @@ section#home{
 #home h1{
   font-size: 3rem;
   margin-bottom: 1rem;
-
 }
 
 .user-menu a{
