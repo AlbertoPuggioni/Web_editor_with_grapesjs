@@ -17,7 +17,7 @@ if (isset($_SESSION['success_message'])) {
 }
 ?>
 
-<!-- PUNTO DI PARTENZA DEI FILE -->
+<!-- FORM PER IL LOGIN / REGISTRAZIONE -->
 <!DOCTYPE html>
 <html lang="en">
 

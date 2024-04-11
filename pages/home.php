@@ -2,7 +2,9 @@
 global $conn;
 session_start();
 
+// modulo per la connessione al db
 include("../modules/connection_db.php");
+
 //Verifica se utente è già autenticato, altrimenti lo reindirizza alla pagina pricipale
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("location: ../main.php");

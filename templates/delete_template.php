@@ -1,6 +1,5 @@
 <?php
 global $conn;
-
 session_start();
 
 // modulo di autenticazione dell'utente

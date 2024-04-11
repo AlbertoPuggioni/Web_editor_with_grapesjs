@@ -1,4 +1,5 @@
 <?php
+global $conn;
 session_start();
 
 // Controllo se l'utente è già autenticato

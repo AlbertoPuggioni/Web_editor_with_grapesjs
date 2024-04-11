@@ -35,9 +35,6 @@ include("../modules/template_manager.php");
     <link href="https://unpkg.com/grapick/dist/grapick.min.css" rel="stylesheet">
 
 
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="scripts/toastr.min.js"></script>
     <script src="scripts/grapes.min.js?v0.21.8"></script>
@@ -54,8 +51,6 @@ include("../modules/template_manager.php");
     <script src="https://unpkg.com/grapesjs-tui-image-editor@0.1.3"></script>
     <script src="https://unpkg.com/grapesjs-typed@1.0.5"></script>
     <script src="https://unpkg.com/grapesjs-style-bg@2.0.1"></script>
-
-
 
 
     <link rel="stylesheet" href="//unpkg.com/grapesjs/dist/css/grapes.min.css">

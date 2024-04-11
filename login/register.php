@@ -36,9 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_check_email->execute();
     $result_email = $stmt_check_email->get_result();
 
+    // check per vedere se la mail è già stata registrata nel db
     if ($result_email->num_rows > 0) {
         $_SESSION['error_message'] = "Email already taken";
-        // Alert per l'email già presa
+        // Alert di errore per l'email già presa
         echo "<script>alert('Email already taken');</script>";
     }
 
