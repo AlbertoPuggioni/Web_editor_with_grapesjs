@@ -95,10 +95,10 @@ if(isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Chiudi la connessione al database
+
 $conn->close();
 
-// TODO --> cambiare il path dove viene creata la directory.
+// TODO --> cambiare il path dove viene creata la directory. ✅
 // Passaggi da eseguire:
 // 1) creare una cartella Published nella directory htdocs
 // 2) spostare la cartella generata da questo script in Published
