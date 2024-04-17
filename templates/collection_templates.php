@@ -65,7 +65,7 @@ $conn->close();
         echo "<a href='../web-editor/web_editor.php?id=" . $row['id'] . "'><i class='fas fa-edit'></i></a>          ";
         echo "<a href='../templates/duplicate_template.php?id=" . $row['id'] . "'><i class='fas fa-copy'></i></a>          ";
         echo "<a href='../templates/delete_template.php?id=" . $row['id'] . "'><i class='fas fa-trash-alt'></i></a>          ";
-        echo "<a href ='../templates/upload_template.php?id=" . $row['id'] . "'><i class='fas fa-upload'></i></a>              ";
+        echo "<a href ='../templates/upload_template.php?id=" . $row['id'] . "'><i class='fas fa-eye'></i></a>              ";
         echo "</td>";
         echo "</tr>";
     }
