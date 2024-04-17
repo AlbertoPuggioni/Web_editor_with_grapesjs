@@ -51,27 +51,15 @@ if(isset($_SESSION['user_id'])) {
             $cssPath = $folderPath . '/style.css';
 
             // Verifica se la cartella non esiste già
-            if (is_dir($folderPath)) {
-                // Contenuto HTML nel file index.html
-                if (file_put_contents($indexPath, $html) !== false) {
-                    // Scrive il contenuto CSS nel file style.css
-                    if (file_put_contents($cssPath, $css_content) !== false) {
-                        echo "I file HTML e CSS sono stati aggiornati con successo.";
-                        echo "<script>window.location.href = 'http://localhost/Published/template_$template_id/index.html';</script>";
-                    } else {
-                        echo "Si è verificato un errore durante l'aggiornamento del file CSS.";
-                    }
-                } else {
-                    echo "Si è verificato un errore durante l'aggiornamento del file HTML.";
-                }
-            } else {
+            if (!is_dir($folderPath)) {
                 // Se la cartella non esiste, la crea e crea i file al suo interno
                 if (mkdir($folderPath, 0777, true)) {
                     // Contenuto HTML nel file index.html
                     if (file_put_contents($indexPath, $html) !== false) {
                         // Scrive il contenuto CSS nel file style.css
                         if (file_put_contents($cssPath, $css_content) !== false) {
-                            echo "I file HTML e CSS sono stati creati con successo.";
+                            echo "<script>alert('I file HTML e CSS sono stati creati con successo.')</script>";
+                            echo "<script>window.location.href = 'http://localhost/Published/template_$template_id/index.html';</script>";
                         } else {
                             echo "Si è verificato un errore durante la creazione del file CSS.";
                         }
@@ -80,6 +68,20 @@ if(isset($_SESSION['user_id'])) {
                     }
                 } else {
                     echo "Si è verificato un errore durante la creazione della cartella \"$folderPath\".";
+                }
+            } else {
+                // La cartella esiste già, quindi sovrascrive i file HTML e CSS al suo interno
+                // Contenuto HTML nel file index.html
+                if (file_put_contents($indexPath, $html) !== false) {
+                    // Scrive il contenuto CSS nel file style.css
+                    if (file_put_contents($cssPath, $css_content) !== false) {
+                        echo "<script>alert('I file HTML e CSS sono stati aggiornati con successo.')</script>";
+                        echo "<script>window.location.href = 'http://localhost/Published/template_$template_id/index.html';</script>";
+                    } else {
+                        echo "Si è verificato un errore durante l'aggiornamento del file CSS.";
+                    }
+                } else {
+                    echo "Si è verificato un errore durante l'aggiornamento del file HTML.";
                 }
             }
         } else {
@@ -96,14 +98,4 @@ if(isset($_SESSION['user_id'])) {
     exit();
 }
 
-
 $conn->close();
-
-// TODO --> cambiare il path dove viene creata la directory. ✅
-// Passaggi da eseguire:
-// 1) creare una cartella Published nella directory htdocs
-// 2) spostare la cartella generata da questo script in Published
-// 3) Visitare il server locale dove viene pubblicato il template
-// il template viene visualizzato a questo indirizzo: http://localhost/Published/pluto/index.html
-
-// TODO --> rendere accessibili le cartelle solo ai proprietari
