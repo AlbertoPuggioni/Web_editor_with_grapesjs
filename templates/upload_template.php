@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id'])) {
             </html>";
 
             // Percorso della cartella da creare --> TODO: creare una cartella generale per ogni singolo utente al cui interno ci sono n dir diverse in base al numero dei template fatti
-            $folderPath = '../../pluto';
+            $folderPath = '../../Published/utente_1';
 
             // Percorso dei file HTML e CSS da creare
             $indexPath = $folderPath . '/index.html';
