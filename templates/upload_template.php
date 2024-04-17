@@ -1,7 +1,6 @@
 <?php
 // Avvia la sessione
 session_start();
-global $conn;
 
 // Connessione al database
 include("../modules/connection_db.php");
@@ -43,19 +42,30 @@ if(isset($_SESSION['user_id'])) {
             </body>
             </html>";
 
-            // Percorso della cartella da creare --> TODO: creare una cartella generale per ogni singolo utente al cui interno ci sono n dir diverse in base al numero dei template fatti
-            $folderPath = '../../Published/utente_1';
+            // Percorso della cartella da creare
+            $folderPath = '../../Published/template_' . $template_id;
 
             // Percorso dei file HTML e CSS da creare
             $indexPath = $folderPath . '/index.html';
             $cssPath = $folderPath . '/style.css';
 
             // Verifica se la cartella non esiste già
-            // TODO --> implementare la funzionalità di sovrascrivere eventualmente una dir già creata in base al contenuto
-            if (!is_dir($folderPath)) {
-                // Crea la cartella
+            if (is_dir($folderPath)) {
+                // Contenuto HTML nel file index.html
+                if (file_put_contents($indexPath, $html) !== false) {
+                    // Scrive il contenuto CSS nel file style.css
+                    if (file_put_contents($cssPath, $css_content) !== false) {
+                        echo "I file HTML e CSS sono stati aggiornati con successo.";
+                    } else {
+                        echo "Si è verificato un errore durante l'aggiornamento del file CSS.";
+                    }
+                } else {
+                    echo "Si è verificato un errore durante l'aggiornamento del file HTML.";
+                }
+            } else {
+                // Se la cartella non esiste, la crea e crea i file al suo interno
                 if (mkdir($folderPath, 0777, true)) {
-                    // contenuto HTML nel file index.html
+                    // Contenuto HTML nel file index.html
                     if (file_put_contents($indexPath, $html) !== false) {
                         // Scrive il contenuto CSS nel file style.css
                         if (file_put_contents($cssPath, $css_content) !== false) {
@@ -69,13 +79,10 @@ if(isset($_SESSION['user_id'])) {
                 } else {
                     echo "Si è verificato un errore durante la creazione della cartella \"$folderPath\".";
                 }
-            } else {
-                echo "La cartella \"$folderPath\" esiste già.";
             }
         } else {
             echo "Nessun template trovato per l'utente attualmente autenticato con l'ID specificato.";
         }
-
         // Chiude il risultato della query
         $fetch_stmt->close();
     } else {
