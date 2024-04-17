@@ -15,7 +15,7 @@ if(isset($_SESSION['user_id'])) {
         $template_id = $_GET['id'];
 
         // Recupera l'HTML e il CSS dal db per il template selezionato dall'utente
-        $fetch_query = "SELECT html, css FROM templates WHERE id=? AND user_id=?";
+        $fetch_query = "SELECT name, html, css FROM templates WHERE id=? AND user_id=?";
         $fetch_stmt = $conn->prepare($fetch_query);
         $fetch_stmt->bind_param("ii", $template_id, $user_id);
         $fetch_stmt->execute();
@@ -27,6 +27,7 @@ if(isset($_SESSION['user_id'])) {
             $template_row = $template_result->fetch_assoc();
             $html_content = stripslashes($template_row['html']);
             $css_content = stripslashes($template_row['css']);
+            $name_content = stripslashes($template_row['name']);
 
             // Contenuto completo del file HTML
             $html = "<!DOCTYPE html>
@@ -34,7 +35,7 @@ if(isset($_SESSION['user_id'])) {
             <head>
                 <meta charset=\"UTF-8\">
                 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-                <title>Template HTML</title>
+                <title>$name_content</title>
                 <link rel=\"stylesheet\" href=\"./style.css\">
             </head>
             <body>
