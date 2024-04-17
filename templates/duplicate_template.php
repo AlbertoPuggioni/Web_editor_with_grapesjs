@@ -1,4 +1,6 @@
 <?php
+global $conn;
+
 session_start();
 $_SESSION['success_message'] = "Template successfully duplicated!";
 $_SESSION['error_message'] = "Cannot duplicate the template";

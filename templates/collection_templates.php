@@ -31,9 +31,11 @@ $conn->close();
     <title>Collection Templates</title>
     <link rel="stylesheet" type="text/css" href="../templates/collection_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- Per modificare l'icona nella tab del browser -->
     <link rel="icon" href="../img/collection.png" type="image/png">
     <!-- --------------------------------------------- -->
+
 </head>
 <body>
 <a href="../pages/home.php"><img src="../img/home.png" id="home"></a>
@@ -63,6 +65,7 @@ $conn->close();
         echo "<a href='../web-editor/web_editor.php?id=" . $row['id'] . "'><i class='fas fa-edit'></i></a>          ";
         echo "<a href='../templates/duplicate_template.php?id=" . $row['id'] . "'><i class='fas fa-copy'></i></a>          ";
         echo "<a href='../templates/delete_template.php?id=" . $row['id'] . "'><i class='fas fa-trash-alt'></i></a>          ";
+        echo "<a href ='../templates/upload_template.php?id=" . $row['id'] . "'><i class='fas fa-upload'></i></a>              ";
         echo "</td>";
         echo "</tr>";
     }

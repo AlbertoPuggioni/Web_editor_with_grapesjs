@@ -8,6 +8,7 @@ if (!isset($_GET['id'])) {
     $sql_check_template = "SELECT id FROM templates WHERE html='' AND css='' AND user_id='$user_id'";
     $result_check_template = $conn->query($sql_check_template);
 
+
     if ($result_check_template && $result_check_template->num_rows > 0) {
         $row = $result_check_template->fetch_assoc();
         $template_id = $row['id'];

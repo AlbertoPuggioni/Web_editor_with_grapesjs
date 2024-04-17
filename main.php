@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 // Controlla se è stato impostato un messaggio di errore
 if (isset($_SESSION['error_message'])) {
     echo "<script>alert('{$_SESSION['error_message']}');</script>";
