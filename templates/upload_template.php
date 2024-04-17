@@ -89,4 +89,9 @@ if(isset($_SESSION['user_id'])) {
 // Chiudi la connessione al database
 $conn->close();
 
+// TODO --> cambiare il path dove viene creata la directory.
+// Passaggi da eseguire:
+// 1) creare una cartella Published nella directory htdocs
+// 2) spostare la cartella generata da questo script in Published
+// 3) Visitare il server locale dove viene pubblicato il template
 // il template viene visualizzato a questo indirizzo: http://localhost/Published/pluto/index.html
