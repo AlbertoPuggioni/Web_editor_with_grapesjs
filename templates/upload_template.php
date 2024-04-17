@@ -104,3 +104,5 @@ $conn->close();
 // 2) spostare la cartella generata da questo script in Published
 // 3) Visitare il server locale dove viene pubblicato il template
 // il template viene visualizzato a questo indirizzo: http://localhost/Published/pluto/index.html
+
+// TODO --> rendere accessibili le cartelle solo ai proprietari
