@@ -1,6 +1,7 @@
 <?php
 // Avvia la sessione
 session_start();
+global $conn;
 
 // Connessione al database
 include("../modules/connection_db.php");
