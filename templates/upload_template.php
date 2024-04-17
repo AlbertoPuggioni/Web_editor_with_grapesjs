@@ -80,8 +80,10 @@ if(isset($_SESSION['user_id'])) {
 } else {
     // Se l'utente non è autenticato, reindirizzalo alla pagina di login
     header("Location: login.php");
-    exit(); // Termina lo script per evitare che venga eseguito ulteriore codice
+    exit();
 }
 
 // Chiudi la connessione al database
 $conn->close();
+
+// il template viene visualizzato a questo indirizzo: http://localhost/Published/pluto/index.html
