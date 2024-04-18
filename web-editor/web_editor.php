@@ -391,27 +391,6 @@ include("../modules/template_manager.php");
         });
     });
 
-
-    /*
-        CODICE PER L'UPLOAD
-    $('#load').on('click', function () {
-        $('#code-input').show();
-    });
-
-    // Aggiunge l'evento click al pulsante "Apply Code"
-    $('#apply-code').on('click', function () {
-        var htmlCode = $('#html-input').val();
-        var cssCode = $('#css-input').val();
-
-        // Applica il codice HTML e CSS al web editor
-        editor.setComponents(htmlCode);
-        editor.setStyle(cssCode);
-
-        // Nasconde l'area di inserimento del codice
-        $('#code-input').hide();
-    });
-
-     */
 </script>
 </body>
 
