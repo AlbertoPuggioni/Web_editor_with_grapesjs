@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id'])) {
             </html>";
 
             // Percorso della cartella da creare
-            $folderPath = '../../Published/template_' . $template_id;
+            $folderPath = '../../Published/'. $name_content;
 
             // Percorso dei file HTML e CSS da creare
             $indexPath = $folderPath . '/index.html';
@@ -59,7 +59,7 @@ if(isset($_SESSION['user_id'])) {
                         // Scrive il contenuto CSS nel file style.css
                         if (file_put_contents($cssPath, $css_content) !== false) {
                             echo "<script>alert('I file HTML e CSS sono stati creati con successo.')</script>";
-                            echo "<script>window.location.href = 'http://localhost/Published/template_$template_id/index.html';</script>";
+                            echo "<script>window.location.href = 'http://localhost/Published/$name_content/index.html';</script>";
                         } else {
                             echo "Si è verificato un errore durante la creazione del file CSS.";
                         }
