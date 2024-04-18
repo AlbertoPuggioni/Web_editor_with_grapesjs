@@ -358,7 +358,14 @@ include("../modules/template_manager.php");
 
         function snapshot() {
             return new Promise(function(resolve, reject) {
-                html2canvas(div).then(function(canvas) {
+                html2canvas(div,
+                    {
+                        useCORS: true, //By passing this option in function Cross origin images will be rendered properly in the downloaded version of the PDF
+                        onrendered: function (canvas) {
+
+                        }
+                    }
+                ).then(function(canvas) {
                     // Ottieni l'URL dell'immagine
                     var imgData = canvas.toDataURL('image/png');
                     // Risolvi la Promise con l'URL dell'immagine
