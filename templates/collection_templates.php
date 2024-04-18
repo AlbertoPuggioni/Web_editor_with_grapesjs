@@ -53,6 +53,7 @@ $conn->close();
     <tr>
         <th class="th_template-name">Template Name</th>
         <th>Last Save</th>
+        <th>Preview</th>
         <th class="th_actions">Actions</th>
     </tr>
     <?php
@@ -61,6 +62,7 @@ $conn->close();
         // Nome del template come link che reindirizza l'utente al template selezionato
         echo "<td><a href='../web-editor/web_editor.php?id=" . $row['id'] . "'>" . $row['name'] . "</a></td>";
         echo "<td>" . $row['reg_date'] . "</td>";
+        echo "<td><img src='" . $row['imgURL'] . "'width='150' height='150'></td>";
         echo "<td>";
         echo "<a href='../web-editor/web_editor.php?id=" . $row['id'] . "'><i class='fas fa-edit'></i></a>          ";
         echo "<a href='../templates/duplicate_template.php?id=" . $row['id'] . "'><i class='fas fa-copy'></i></a>          ";
