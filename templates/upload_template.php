@@ -43,8 +43,8 @@ if(isset($_SESSION['user_id'])) {
             </body>
             </html>";
 
-            // Percorso della cartella da creare
-            $folderPath = '../../Published/'. $name_content;
+            // Percorso della cartella che viene creata (la dir viene creata con lo stesso nome del template di collection template)
+            $folderPath = '../../Published/' . $name_content;
 
             // Percorso dei file HTML e CSS da creare
             $indexPath = $folderPath . '/index.html';
@@ -76,7 +76,7 @@ if(isset($_SESSION['user_id'])) {
                     // Scrive il contenuto CSS nel file style.css
                     if (file_put_contents($cssPath, $css_content) !== false) {
                         echo "<script>alert('I file HTML e CSS sono stati aggiornati con successo.')</script>";
-                        echo "<script>window.location.href = 'http://localhost/Published/template_$template_id/index.html';</script>";
+                        echo "<script>window.location.href = 'http://localhost/Published/$name_content/index.html';</script>";
                     } else {
                         echo "Si è verificato un errore durante l'aggiornamento del file CSS.";
                     }
