@@ -41,7 +41,6 @@ $conn->close();
 <body>
 <a href="../pages/home.php"><img src="../img/home.png" id="home"></a>
 <a href="../web-editor/web_editor.php"> <img src="../img/editor_collection.png" id="editor_template"></a>
-<h1 class="title">Collection Templates</h1>
 <div class="user">
     <img src="../img/user.png" id="user">
     <div class="user-menu">
@@ -50,14 +49,15 @@ $conn->close();
         </ul>
     </div>
 </div>
-
+<h1 class="title">Collection Templates</h1>
 <div class="container">
     <div class="row">
         <?php
         while ($row = $result->fetch_assoc()) {
             echo "<div class='col-md-4'>";
             echo "<div class='card'>";
-            echo "<img src='" . $row['imgURL'] . "' class='card-img-top' alt='Template Preview'>";
+            $imgSrc = !empty($row['imgURL']) ? $row['imgURL'] : '../img/empty_template.png';
+            echo "<img src='" . $imgSrc . "' class='card-img-top' alt='" . (empty($row['imgURL']) ? 'Empty Template' : 'Template Preview') . "'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
             echo "<p class='card-text'>Last Save: " . $row['reg_date'] . "</p>";
@@ -73,9 +73,5 @@ $conn->close();
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
 
