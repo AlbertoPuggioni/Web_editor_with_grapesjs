@@ -29,8 +29,9 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Templates</title>
-    <link rel="stylesheet" type="text/css" href="../templates/collection_style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="collection_style.css">
 
     <!-- Per modificare l'icona nella tab del browser -->
     <link rel="icon" href="../img/collection.png" type="image/png">
@@ -49,29 +50,32 @@ $conn->close();
         </ul>
     </div>
 </div>
-<table>
-    <tr>
-        <th class="th_template-name">Template Name</th>
-        <th>Last Save</th>
-        <th>Preview</th>
-        <th class="th_actions">Actions</th>
-    </tr>
-    <?php
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        // Nome del template come link che reindirizza l'utente al template selezionato
-        echo "<td><a href='../web-editor/web_editor.php?id=" . $row['id'] . "'>" . $row['name'] . "</a></td>";
-        echo "<td>" . $row['reg_date'] . "</td>";
-        echo "<td><img src='" . $row['imgURL'] . "'width='150' height='150'></td>";
-        echo "<td>";
-        echo "<a href='../web-editor/web_editor.php?id=" . $row['id'] . "'><i class='fas fa-edit'></i></a>          ";
-        echo "<a href='../templates/duplicate_template.php?id=" . $row['id'] . "'><i class='fas fa-copy'></i></a>          ";
-        echo "<a href='../templates/delete_template.php?id=" . $row['id'] . "'><i class='fas fa-trash-alt'></i></a>          ";
-        echo "<a href ='../templates/upload_template.php?id=" . $row['id'] . "'><i class='fas fa-eye'></i></a>              ";
-        echo "</td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
+
+<div class="container">
+    <div class="row">
+        <?php
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='col-md-4'>";
+            echo "<div class='card'>";
+            echo "<img src='" . $row['imgURL'] . "' class='card-img-top' alt='Template Preview'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
+            echo "<p class='card-text'>Last Save: " . $row['reg_date'] . "</p>";
+            echo "<a href='../web-editor/web_editor.php?id=" . $row['id'] . "' class='btn btn-primary'><i class='fas fa-edit'></i> Edit</a>";
+            echo "<a href='../templates/duplicate_template.php?id=" . $row['id'] . "' class='btn btn-secondary'><i class='fas fa-copy'></i> Duplicate</a>";
+            echo "<a href='../templates/delete_template.php?id=" . $row['id'] . "' class='btn btn-danger'><i class='fas fa-trash-alt'></i> Delete</a>";
+            echo "<a href ='../templates/upload_template.php?id=" . $row['id'] . "' class='btn btn-info'><i class='fas fa-eye'></i> Preview</a>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        ?>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

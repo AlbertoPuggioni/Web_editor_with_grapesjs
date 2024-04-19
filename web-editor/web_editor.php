@@ -6,11 +6,11 @@ global $template_id;
 // Moduli:
 // =================================================================================
 // Autenticazione utente
-include("../modules/authentication_user.php");
+include ("../modules/authentication_user.php");
 // Connessione con il db
-include("../modules/connection_db.php");
+include ("../modules/connection_db.php");
 // Logica che gestisce l'inserimento, la modifica e la cancellazione del template
-include("../modules/template_manager.php");
+include ("../modules/template_manager.php");
 
 // =================================================================================
 
@@ -76,14 +76,6 @@ include("../modules/template_manager.php");
             </ul>
         </div>
     </div>
-
-    <!-- BLOCCO PER L'UPLOAD
-<button id="load">Load your Code</button>
-    <div id="code-input">
-        <textarea id="html-input" placeholder="paste your html here"></textarea>
-        <textarea id="css-input" placeholder="paste your css here"></textarea>
-        <button id="apply-code"> Apply code</button>
-    </div> -->
 </div>
 
 
@@ -100,7 +92,8 @@ include("../modules/template_manager.php");
             </nav>
             <div class="clearfix"></div>
             <div class="lead-title">Template Drag and Drop</div>
-            <div class="sub-lead-title">Edit your webpage with blocks. You can create new text blocks with the command from the left panel</div>
+            <div class="sub-lead-title">Edit your webpage with blocks. You can create new text blocks with the
+                command from the left panel</div>
             <div class="lead-btn">Hover me</div>
         </div>
     </header>
@@ -108,14 +101,16 @@ include("../modules/template_manager.php");
     <section class="flex-sect">
         <div class="container-width">
             <div class="flex-title">Flex is the new black</div>
-            <div class="flex-desc">With flexbox system you're able to build complex layouts easily and with free responsivity</div>
+            <div class="flex-desc">With flexbox system you're able to build complex layouts easily and with free
+                responsivity</div>
             <div class="cards">
                 <div class="card">
                     <div class="card-header"></div>
                     <div class="card-body">
                         <div class="card-title">Title one</div>
                         <div class="card-sub-title">Subtitle one</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
                 <div class="card">
@@ -123,7 +118,8 @@ include("../modules/template_manager.php");
                     <div class="card-body">
                         <div class="card-title">Title two</div>
                         <div class="card-sub-title">Subtitle two</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
                 <div class="card">
@@ -131,7 +127,8 @@ include("../modules/template_manager.php");
                     <div class="card-body">
                         <div class="card-title">Title three</div>
                         <div class="card-sub-title">Subtitle three</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
                 <div class="card">
@@ -139,7 +136,8 @@ include("../modules/template_manager.php");
                     <div class="card-body">
                         <div class="card-title">Title four</div>
                         <div class="card-sub-title">Subtitle four</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
                 <div class="card">
@@ -147,7 +145,8 @@ include("../modules/template_manager.php");
                     <div class="card-body">
                         <div class="card-title">Title five</div>
                         <div class="card-sub-title">Subtitle five</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
                 <div class="card">
@@ -155,7 +154,8 @@ include("../modules/template_manager.php");
                     <div class="card-body">
                         <div class="card-title">Title six</div>
                         <div class="card-sub-title">Subtitle six</div>
-                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+                        <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore</div>
                     </div>
                 </div>
             </div>
@@ -165,11 +165,12 @@ include("../modules/template_manager.php");
     <section class="am-sect">
         <div class="container-width">
             <div class="am-container">
-                <img class="img-phone" onmousedown="return false" src="./img/phone-app.png"/>
+                <img class="img-phone" onmousedown="return false" src="./img/phone-app.png" />
                 <div class="am-content">
                     <div class="am-pre">ASSET MANAGER</div>
                     <div class="am-title">Manage your images with Asset Manager</div>
-                    <div class="am-desc">You can create image blocks with the command from the left panel and edit them with double click</div>
+                    <div class="am-desc">You can create image blocks with the command from the left panel and edit
+                        them with double click</div>
                     <div class="am-post">Image uploading is not allowed in this demo</div>
                 </div>
             </div>
@@ -179,7 +180,8 @@ include("../modules/template_manager.php");
     <section class="blk-sect">
         <div class="container-width">
             <div class="blk-title">Blocks</div>
-            <div class="blk-desc">Each element in HTML page could be seen as a block. On the left panel you could find different kind of blocks that you can create, move and style</div>
+            <div class="blk-desc">Each element in HTML page could be seen as a block. On the left panel you could
+                find different kind of blocks that you can create, move and style</div>
 
             <div class="price-cards">
                 <div class="price-card-cont">
@@ -230,7 +232,8 @@ include("../modules/template_manager.php");
                     <div class="badge-body">
                         <div class="badge-name">Person 1</div>
                         <div class="badge-role">CEO</div>
-                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit</div>
+                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore ipsum dolor sit</div>
                     </div>
                     <div class="badge-foot">
                         <span class="badge-link">f</span>
@@ -244,7 +247,8 @@ include("../modules/template_manager.php");
                     <div class="badge-body">
                         <div class="badge-name">Person 2</div>
                         <div class="badge-role">Software Engineer</div>
-                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit</div>
+                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore ipsum dolor sit</div>
                     </div>
                     <div class="badge-foot">
                         <span class="badge-link">f</span>
@@ -258,7 +262,8 @@ include("../modules/template_manager.php");
                     <div class="badge-body">
                         <div class="badge-name">Person 3</div>
                         <div class="badge-role">Web Designer</div>
-                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit</div>
+                        <div class="badge-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore ipsum dolor sit</div>
                     </div>
                     <div class="badge-foot">
                         <span class="badge-link">f</span>
@@ -296,9 +301,10 @@ include("../modules/template_manager.php");
                 <div class="form-sub">
                     <div class="foot-form-cont">
                         <div class="foot-form-title">Subscribe</div>
-                        <div class="foot-form-desc">Subscribe to our newsletter to receive exclusive offers and the latest news</div>
+                        <div class="foot-form-desc">Subscribe to our newsletter to receive exclusive offers and the
+                            latest news</div>
                         <input name="name" class="sub-input" placeholder="Name" />
-                        <input name="email" class="sub-input" placeholder="Email"/>
+                        <input name="email" class="sub-input" placeholder="Email" />
                         <button class="sub-btn" type="button">Submit</button>
                     </div>
                 </div>
@@ -314,25 +320,29 @@ include("../modules/template_manager.php");
             </div>
         </div>
     </footer>
-    <link rel="stylesheet" type = "text/css" href="./stylesheets/assets.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/assets.css">
 </div>
 
 <div id="info-panel" style="display:none">
-    <br/>
+    <br />
 
     <div class="info-panel-label">
         <b>GrapesJS Webpage Builder</b> is a simple showcase of what is possible to achieve with the
-        <a class="info-panel-link gjs-four-color" target="_blank" href="https://github.com/artf/grapesjs">GrapesJS</a>
+        <a class="info-panel-link gjs-four-color" target="_blank"
+           href="https://github.com/artf/grapesjs">GrapesJS</a>
         core library
-        <br/><br/>
+        <br /><br />
         For any hint about the demo check the
-        <a class="info-panel-link gjs-four-color" target="_blank" href="https://github.com/artf/grapesjs-preset-webpage">Webpage Preset repository</a>
+        <a class="info-panel-link gjs-four-color" target="_blank"
+           href="https://github.com/artf/grapesjs-preset-webpage">Webpage Preset repository</a>
         and open an issue. For problems with the builder itself, open an issue on the main
-        <a class="info-panel-link gjs-four-color" target="_blank" href="https://github.com/artf/grapesjs">GrapesJS repository</a>
-        <br/><br/>
+        <a class="info-panel-link gjs-four-color" target="_blank" href="https://github.com/artf/grapesjs">GrapesJS
+            repository</a>
+        <br /><br />
         Being a free and open source project contributors and supporters are extremely welcome.
         If you like the project support it with a donation of your choice or become a backer/sponsor via
-        <a class="info-panel-link gjs-four-color" target="_blank" href="https://opencollective.com/grapesjs">Open Collective</a>
+        <a class="info-panel-link gjs-four-color" target="_blank" href="https://opencollective.com/grapesjs">Open
+            Collective</a>
     </div>
 </div>
 
@@ -357,29 +367,30 @@ include("../modules/template_manager.php");
         let div = dociframe.querySelector("html");
 
         function snapshot() {
-            return new Promise(function(resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 html2canvas(div,
                     {
-                        useCORS: true, //By passing this option in function Cross origin images will be rendered properly in the downloaded version of the PDF
+                        useCORS: true,
+                        height: 1000,
                         onrendered: function (canvas) {
 
                         }
                     }
-                ).then(function(canvas) {
-                    // Ottieni l'URL dell'immagine
-                    var imgData = canvas.toDataURL('image/png');
-                    // Risolvi la Promise con l'URL dell'immagine
+                ).then(function (canvas) {
+
+                    let imgData = canvas.toDataURL('image/png');
+
                     resolve(imgData);
-                }).catch(function(error) {
-                    // Se c'è un errore durante la creazione del canvas, rifiuta la Promise
+                }).catch(function (error) {
+
                     reject(error);
                 });
             });
         }
 
-// Utilizza snapshot() per ottenere l'URL dell'immagine in modo asincrono
-        snapshot().then(function(imgURL) {
-            // Effettua una richiesta AJAX per salvare o aggiornare il template nel database
+
+        snapshot().then(function (imgURL) {
+
             $.ajax({
                 url: 'web_editor.php?id=<?php echo $template_id; ?>',
                 method: 'POST',
@@ -391,9 +402,9 @@ include("../modules/template_manager.php");
                     console.error(xhr.responseText);
                 }
             });
-            // Puoi procedere con l'utilizzo di imgURL come desiderato, ad esempio passandolo alla funzione AJAX
-        }).catch(function(error) {
-            // Gestisci eventuali errori qui
+
+        }).catch(function (error) {
+
             console.error("Error in snapshot():", error);
         });
     });

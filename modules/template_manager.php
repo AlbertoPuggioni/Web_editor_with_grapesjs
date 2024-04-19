@@ -1,5 +1,6 @@
 <?php
 global $conn;
+
 include("connection_db.php");
 
 // Se l'ID del template non è fornito, crea un nuovo template e ottieni l'ID
@@ -52,7 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['html']) && isset($_POS
     $css = mysqli_real_escape_string($conn, $css);
     $templateName = mysqli_real_escape_string($conn, $templateName);
 
+
+
     // Esegui un'operazione di aggiornamento del template nel database
+
     $sql_update_data = "UPDATE templates SET html=?, css=?, name=?, reg_date=NOW(), imgURL = ? WHERE id=? AND user_id=?";
     $stmt = $conn->prepare($sql_update_data);
     $stmt->bind_param("ssssii", $html, $css, $templateName, $imgURL, $template_id, $_SESSION['user_id']);

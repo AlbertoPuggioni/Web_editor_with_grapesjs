@@ -49,7 +49,7 @@ $sql_create_templates_table = "CREATE TABLE IF NOT EXISTS templates (
             css LONGTEXT NOT NULL,
             reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             user_id BIGINT UNSIGNED,
-            imgURL LONGTEXT NOT NULL, 
+            imgURL LONGBLOB NOT NULL, 
             FOREIGN KEY (user_id) REFERENCES users(id)
             )";
 // si può modificare il LONGBLOB con il LONGTEXT --> in questo momento è settato a LONGBLOB per la collection_templates

@@ -1,4 +1,4 @@
-/* Regole di stile per vedere template precedenti */
+/* Regole di stile per visualizzare i template precedenti */
 
 /* Impostazioni generali */
 body {
@@ -11,61 +11,94 @@ body {
 
 /* Stile del titolo */
 .title {
+    margin-top: 30px;
     padding-top: 30px;
     padding-left: 45px;
     text-align: center;
     color: white;
-    display: inline-block;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Stile delle tabelle */
-table {
-    border-collapse: collapse;
-    width: 91%;
-    margin-left: 50px;
-    margin-top: 100px;
+/* Stile delle card */
+.card {
+    margin-top: 20px;
     background-color: white;
     border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Stile delle celle delle tabelle */
-th,
-td {
-    text-align: center;
-    padding: 8px;
-}
-
-/* Stile delle celle del corpo della tabella */
-td {
+/* Immagine della card */
+.card img {
     border-radius: 20px;
 }
 
-/* Stile delle celle dell'intestazione */
-th {
-    background-color: #f2f2f2;
+/* Stile del corpo della card */
+.card-body {
+    padding: 20px;
 }
 
-/* Stile specifico per l'intestazione del nome del template */
-.th_template-name {
-    border-top-left-radius: 20px;
+/* Stile del titolo della card */
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
 }
 
-/* Stile specifico per l'intestazione delle azioni */
-.th_actions {
-    border-top-right-radius: 20px;
+/* Stile del testo della card */
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
 }
 
-/* Stile dei link visitati e non visitati */
-a:visited,
-a {
-    color: inherit;
+/* Stile dei pulsanti */
+.btn {
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
-/* Stile del menu utente  [DA RIVEDERE] */
+
+/* Icone */
+#home {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+#editor_template {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+.user {
+    position: relative;
+    cursor: pointer;
+}
+
+#user {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+
+
+/* Stile del menu utente */
 .user-menu {
     display: none;
     position: absolute;
@@ -85,38 +118,34 @@ a {
     float: right;
 }
 
-/* Visualizzazione del menu utente al passaggio del mouse */
 .user:hover .user-menu {
     display: block;
     z-index: 10;
 }
 
-/* Elementi del menu utente */
+/* Hover dell'utente */
 .hover-menu {
     padding-right: 20px;
 }
 
-/* Icone */
-#home,
-#user {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    padding-top: 12px;
-    padding-left: 10px;
-}
-
-/* Elementi del menu utente */
-.hover-menu li {
-    padding-right: 11px;
-    list-style: none;
-}
-
-/* Stile dei link nel menu utente */
 .user-menu a {
     text-decoration: none;
 }
 
-#editor_template {
-    margin-left: 24px;
+/* Cards */
+@media (min-width: 768px) {
+    .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding-top: 55px;
+    }
+}
+
+/* Hover delle cards */
+.card:hover img {
+    transform: scale(1.6);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    border-style: ridge;
 }
