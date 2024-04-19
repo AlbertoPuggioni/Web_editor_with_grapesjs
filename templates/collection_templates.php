@@ -56,7 +56,7 @@ $conn->close();
         while ($row = $result->fetch_assoc()) {
             echo "<div class='col-md-4'>";
             echo "<div class='card'>";
-            $imgSrc = !empty($row['imgURL']) ? $row['imgURL'] : '../img/empty_template.png';
+            $imgSrc = !empty($row['imgURL']) ? $row['imgURL'] : '../img/white_template.png';
             echo "<img src='" . $imgSrc . "' class='card-img-top' alt='" . (empty($row['imgURL']) ? 'Empty Template' : 'Template Preview') . "'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $row['name'] . "</h5>";
@@ -72,6 +72,12 @@ $conn->close();
         ?>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 
 
 
