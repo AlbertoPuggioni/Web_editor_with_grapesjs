@@ -41,7 +41,9 @@ That's it! You're ready to start creating and editing web pages with GrapeJS.
 
 ## References
 
-For more information about GrapeJS and XAMPP, visit their official websites:
+For more information about GrapeJS, XAMPP, VSCode or PHP Storm visit their official websites:
 
 - [GrapeJS Official Website](https://grapesjs.com/)
 - [XAMPP Official Website](https://www.apachefriends.org/it/index.html)
+- [Visual Studio Code Website](https://code.visualstudio.com/)
+- [PHP Storm](https://www.jetbrains.com/phpstorm/)
