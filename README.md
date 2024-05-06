@@ -24,6 +24,6 @@ git clone https://github.com/AlbertoPuggioni/web_editor_with_grapesjs.git
 ```
 
 ## References
-[GrapeJS page](https://grapesjs.com/)
+[GrapeJS page](https://grapesjs.com/) <br>
 [XAMPP page](https://www.apachefriends.org/it/index.html)
 
