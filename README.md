@@ -21,6 +21,7 @@ No installation process is required to use the editor. Simply clone the reposito
 
 ```bash
 git clone https://github.com/AlbertoPuggioni/web_editor_with_grapesjs.git
+```
 
 ## References
 [GrapeJS page](https://grapesjs.com/)
