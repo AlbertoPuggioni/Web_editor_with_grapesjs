@@ -17,6 +17,13 @@ To run the web editor, you'll need:
 - **Server**: A server to store information about templates and users. For this project, XAMPP was used as the local development environment.
 - **Web Browser**: A modern web browser compatible with HTML5 and CSS3.
 
+
+## What do I need?
+
+- **XAMPP**: an Apache local server with MySQL database
+- **Visual Studio Code / PHP Storm**: an IDE to launch the script to build the database
+
+
 ## Installation
 
 No complex installation process is required to start using the editor. Simply follow these steps:
@@ -26,8 +33,9 @@ No complex installation process is required to start using the editor. Simply fo
     ```bash
     git clone https://github.com/AlbertoPuggioni/web_editor_with_grapesjs.git
     ```
-
-2. Open the `main.php` file in your preferred web browser.
+2. Run the `create_db.php` file to build the database with the proper tables.
+   
+3. Open the `main.php` file in your preferred web browser.
 
 That's it! You're ready to start creating and editing web pages with GrapeJS.
 
