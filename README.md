@@ -1,8 +1,23 @@
-# Content Management System con GrapesJS #
+# Web Editor with GrapeJS
 
-Si tratta di un progetto elaborato durante il periodo di stage.
-In questa repository è possibile esplorare tutta la parte tecnica che va a costituire il progetto.
+![GrapeJS Logo](https://raw.githubusercontent.com/AlbertoPuggioni/web_editor_with_grapesjs/main/logo.png)
 
-Per avviare tutto il progetto, è necessario eseguire il seguente file:
-> main.php
+This project is a simple web editor that utilizes GrapeJS, an open-source framework for creating dynamic web pages. With this editor, users can easily create and modify web pages using an intuitive drag-and-drop interface.
 
+## Main Features
+
+- **Drag-and-Drop Interface**: Drag and drop elements to quickly create custom layouts.
+- **Predefined Components**: Includes a wide range of predefined components to simplify the creation process.
+- **Customization**: Modify styles, colors, and properties of elements with ease.
+- **Export**: Export HTML and CSS code of the created page for integration with other projects.
+
+## Requirements
+
+- Modern web browser compatible with HTML5 and CSS3.
+
+## Installation
+
+No installation process is required to use the editor. Simply clone the repository and open the `index.html` file in your preferred web browser.
+
+```bash
+git clone https://github.com/AlbertoPuggioni/web_editor_with_grapesjs.git
