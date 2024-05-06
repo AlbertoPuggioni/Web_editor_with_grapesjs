@@ -45,5 +45,4 @@ For more information about GrapeJS, XAMPP, VSCode or PHP Storm visit their offic
 
 - [GrapeJS Official Website](https://grapesjs.com/)
 - [XAMPP Official Website](https://www.apachefriends.org/it/index.html)
-- [Visual Studio Code Official Website](https://code.visualstudio.com/)
-- [PHP Storm Official Website](https://www.jetbrains.com/phpstorm/)
+- [Visual Studio Code Official Website](https://code.visualstudio.com/) / - [PHP Storm Official Website](https://www.jetbrains.com/phpstorm/)
