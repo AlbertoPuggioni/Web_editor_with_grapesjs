@@ -33,12 +33,12 @@ if (isset ($_GET['id'])) {
             $template_name = $template_row['name'];
             $html_content = $template_row['html'];
             $css_content = $template_row['css'];
-            $imgURL = $template_row['imgURL'];
+            $imgURL_content = $template_row['imgURL'];
 
             // Inserisci un nuovo record con il contenuto e il nome del template originale
             $insert_query = "INSERT INTO templates (name, user_id, html, css, imgURL) VALUES (?, ?, ?, ?, ?)";
             $insert_stmt = $conn->prepare($insert_query);
-            $insert_stmt->bind_param("sisss", $template_name, $user_id, $html_content, $css_content, $imgURL);
+            $insert_stmt->bind_param("sisss", $template_name, $user_id, $html_content, $css_content, $imgURL_content);
             $insert_stmt->execute();
 
             if ($insert_stmt->affected_rows == 1) {
