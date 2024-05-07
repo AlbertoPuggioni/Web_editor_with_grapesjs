@@ -22,7 +22,7 @@ if (isset ($_GET['id'])) {
 
     if ($check_result->num_rows == 1) {
         // Estrai il template originale e il suo nome
-        $fetch_query = "SELECT name, html, css FROM templates WHERE id=?";
+        $fetch_query = "SELECT name, html, css, imgURL FROM templates WHERE id=?";
         $fetch_stmt = $conn->prepare($fetch_query);
         $fetch_stmt->bind_param("i", $template_id);
         $fetch_stmt->execute();
@@ -33,11 +33,12 @@ if (isset ($_GET['id'])) {
             $template_name = $template_row['name'];
             $html_content = $template_row['html'];
             $css_content = $template_row['css'];
+            $imgURL = $template_row['imgURL'];
 
             // Inserisci un nuovo record con il contenuto e il nome del template originale
-            $insert_query = "INSERT INTO templates (name, user_id, html, css) VALUES (?, ?, ?, ?)";
+            $insert_query = "INSERT INTO templates (name, user_id, html, css, imgURL) VALUES (?, ?, ?, ?, ?)";
             $insert_stmt = $conn->prepare($insert_query);
-            $insert_stmt->bind_param("siss", $template_name, $user_id, $html_content, $css_content);
+            $insert_stmt->bind_param("sisss", $template_name, $user_id, $html_content, $css_content, $imgURL);
             $insert_stmt->execute();
 
             if ($insert_stmt->affected_rows == 1) {
