@@ -56,5 +56,5 @@ if (isset ($_GET['id'])) {
     }
 }
 
-// Chiudi la connessione con il database
+// chiusura della connessione con il db
 $conn->close();
