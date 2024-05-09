@@ -66,16 +66,16 @@ if(isset($_SESSION['user_id'])) {
                     if (file_put_contents($indexPath, $html) !== false) {
                         // Scrive il contenuto CSS nel file style.css
                         if (file_put_contents($cssPath, $css_content) !== false) {
-                            echo "<script>alert('I file HTML e CSS sono stati creati con successo.')</script>";
+                            echo "<script>alert('HTML and CSS files are successfully created.')</script>";
                             echo "<script>window.location.href = 'http://localhost/Published/$user_id/$name_content/index.html';</script>";
                         } else {
-                            echo "Si è verificato un errore durante la creazione del file CSS.";
+                            echo "Ops. Something went wrong while creating CSS file.";
                         }
                     } else {
-                        echo "Si è verificato un errore durante la creazione del file HTML.";
+                        echo "Ops. Something went wrong while creating HTML file.";
                     }
                 } else {
-                    echo "Si è verificato un errore durante la creazione della cartella \"$folderPath\".";
+                    echo "Ops. Something went wrong while creating the user's directory.\"$folderPath\".";
                 }
             } else {
                 // La cartella esiste già, quindi sovrascrive i file HTML e CSS al suo interno
@@ -83,22 +83,20 @@ if(isset($_SESSION['user_id'])) {
                 if (file_put_contents($indexPath, $html) !== false) {
                     // Scrive il contenuto CSS nel file style.css
                     if (file_put_contents($cssPath, $css_content) !== false) {
-                        echo "<script>alert('I file HTML e CSS sono stati aggiornati con successo.')</script>";
+                        echo "<script>alert('HTML & CSS files successfully updated.')</script>";
                         echo "<script>window.location.href = 'http://localhost/Published/$name_content/index.html';</script>";
                     } else {
-                        echo "Si è verificato un errore durante l'aggiornamento del file CSS.";
+                        echo "Something went wrong during the CSS file's update.";
                     }
                 } else {
-                    echo "Si è verificato un errore durante l'aggiornamento del file HTML.";
+                    echo "Something went wrong during the HTML file's update.";
                 }
             }
         } else {
-            echo "Nessun template trovato per l'utente attualmente autenticato con l'ID specificato.";
+            echo "Seems like the template you are looking for does not exists.";
         }
         // Chiude il risultato della query
         $fetch_stmt->close();
-    } else {
-        echo "ID del template per il publish non specificato.";
     }
 } else {
     // Se l'utente non è autenticato, viene reindirizzato alla pagina di login
