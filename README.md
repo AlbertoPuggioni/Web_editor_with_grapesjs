@@ -33,7 +33,7 @@ No complex installation process is required to start using the editor. Simply fo
     ```bash
     git clone https://github.com/AlbertoPuggioni/web_editor_with_grapesjs.git
     ```
-2. Run the `create_db.php` file to build the database with the proper tables.
+2. Run the `create_db.php` file to build the database with the proper tables. You can find it under the `modules` directory.
 3. Open the `main.php` file in your preferred web browser.
 
 That's it! You're ready to start creating and editing web pages with GrapeJS.
