@@ -15,7 +15,7 @@ if(isset($_SESSION['user_id'])) {
         $template_id = $_GET['id'];
 
         // Recupera l'HTML e il CSS dal db per il template selezionato dall'utente
-        $fetch_query = "SELECT u.username, t.name, t.html, t.css FROM users u INNER JOIN templates t ON u.id = t.user_id WHERE t.id=? AND t.user_id=?";
+        $fetch_query = "SELECT u.username, t.name, t.html, t.css FROM users as u INNER JOIN templates t ON u.id = t.user_id WHERE t.id=? AND t.user_id=?";
         $fetch_stmt = $conn->prepare($fetch_query);
         $fetch_stmt->bind_param("ii", $template_id, $user_id);
         $fetch_stmt->execute();
