@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
             echo "<script>alert('Template successfully deleted');</script>";
 
             // dopo aver cancellato un template, refresha la pagina di collection_templates
-            header("refresh:0;url=collection_templates.php");
+           echo "<script>location.href='../templates/collection_templates.php'</script>";
         } else {
             echo "Cannot delete the template: " . $conn->error;
         }

@@ -84,7 +84,7 @@ if(isset($_SESSION['user_id'])) {
                     // Scrive il contenuto CSS nel file style.css
                     if (file_put_contents($cssPath, $css_content) !== false) {
                         echo "<script>alert('HTML & CSS files successfully updated.')</script>";
-                        echo "<script>window.location.href = 'http://localhost/Published/$name_content/index.html';</script>";
+                        echo "<script>window.location.href = 'http://localhost/Published/$user_id/$name_content/index.html';</script>";
                     } else {
                         echo "Something went wrong during the CSS file's update.";
                     }
