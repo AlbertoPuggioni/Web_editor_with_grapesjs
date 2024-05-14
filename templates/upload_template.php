@@ -14,15 +14,8 @@ if(isset($_SESSION['user_id'])) {
     if(isset($_GET['id'])) {
         $template_id = $_GET['id'];
 
-        $fetch_query_user = "SELECT id FROM users WHERE id = ?";
-        $fetch_stmt = $conn->prepare($fetch_query_user);
-        $fetch_stmt -> bind_param("i", $user_id);
-        $fetch_stmt->execute();
-        $user_result = $fetch_stmt->get_result();
-
-
         // Recupera l'HTML e il CSS dal db per il template selezionato dall'utente
-        $fetch_query = "SELECT name, html, css FROM templates WHERE id=? AND user_id=?";
+        $fetch_query = "SELECT u.username, t.name, t.html, t.css FROM users u INNER JOIN templates t ON u.id = t.user_id WHERE t.id=? AND t.user_id=?";
         $fetch_stmt = $conn->prepare($fetch_query);
         $fetch_stmt->bind_param("ii", $template_id, $user_id);
         $fetch_stmt->execute();
@@ -35,6 +28,7 @@ if(isset($_SESSION['user_id'])) {
             $html_content = stripslashes($template_row['html']);
             $css_content = stripslashes($template_row['css']);
             $name_content = stripslashes($template_row['name']);
+            $username = stripslashes($template_row['username']);
 
             // Contenuto completo del file HTML
             $html = "<!DOCTYPE html>
@@ -51,7 +45,7 @@ if(isset($_SESSION['user_id'])) {
             </html>";
 
             // Percorso della cartella che viene creata (la dir viene creata con lo stesso nome del template di collection template)
-            $folderPath = '../../Published/' . $user_id . '/' . $name_content;
+            $folderPath = '../../Published/' . $username . '/' . $name_content;
 
 
             // Percorso dei file HTML e CSS da creare
@@ -67,7 +61,7 @@ if(isset($_SESSION['user_id'])) {
                         // Scrive il contenuto CSS nel file style.css
                         if (file_put_contents($cssPath, $css_content) !== false) {
                             echo "<script>alert('HTML and CSS files are successfully created.')</script>";
-                            echo "<script>window.location.href = 'http://localhost/Published/$user_id/$name_content/index.html';</script>";
+                            echo "<script>window.location.href = 'http://localhost/Published/$username/$name_content/index.html';</script>";
                         } else {
                             echo "Ops. Something went wrong while creating CSS file.";
                         }
@@ -84,7 +78,7 @@ if(isset($_SESSION['user_id'])) {
                     // Scrive il contenuto CSS nel file style.css
                     if (file_put_contents($cssPath, $css_content) !== false) {
                         echo "<script>alert('HTML & CSS files successfully updated.')</script>";
-                        echo "<script>window.location.href = 'http://localhost/Published/$user_id/$name_content/index.html';</script>";
+                        echo "<script>window.location.href = 'http://localhost/Published/$username/$name_content/index.html';</script>";
                     } else {
                         echo "Something went wrong during the CSS file's update.";
                     }
