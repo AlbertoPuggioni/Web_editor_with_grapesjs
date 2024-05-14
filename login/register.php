@@ -65,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['success_message'] = "Registration successful!";
             // Alert per la registrazione avvenuta con successo
             echo "<script>alert('Registration successful!');</script>";
+            echo "<script>window.location.href='../main.php';</script>";
 
         } else {
             $_SESSION['error_message'] = "Something went wrong during the registration process: " . $stmt->error;
@@ -88,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Reindirizza a main.php dopo la gestione dei dati del form
-    header("location: ../main.php");
+
     exit;
 }
 
@@ -99,4 +100,3 @@ function clean_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
