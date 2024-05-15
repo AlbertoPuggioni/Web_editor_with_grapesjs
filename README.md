@@ -8,7 +8,7 @@ This project is a simple web editor that utilizes GrapeJS, an open-source framew
 - **Drag-and-Drop Interface**: Easily create custom layouts by dragging and dropping elements onto the canvas.
 - **Predefined Components**: Access a wide variety of prebuilt components, such as buttons, images, and text blocks, to expedite the page creation process.
 - **Customization**: Customize the appearance and behavior of elements by adjusting their styles, colors, and properties, providing flexibility and control over the design.
-- **Export**: Export the HTML and CSS code of the created page, enabling seamless integration with other projects or platforms.
+- **Preview**: Do you want to see how your customized page looks? Just press the 'Preview' button and admire your work.
 
 ## Requirements
 
